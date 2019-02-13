@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using EnterpriseOrganization.DependencyInjection.BuilderExtension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using PackageTest.BusinessLogics;
 using PackageTest.Controllers;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.Swagger;
+using UtilsPack.DependencyInjection.BuilderExtension;
 
 namespace PackageTest
 {
@@ -33,8 +35,25 @@ namespace PackageTest
                       builder.UseMySql(Configuration.GetConnectionString("Version"), sql => sql.MigrationsAssembly(migrationsAssembly));
                 });
 
+            services.AddUtilService()
+                .AddUtilStore(option =>
+                {
+                    option.BuildDbContext = builder =>
+                      builder.UseMySql(Configuration.GetConnectionString("Util"), sql => sql.MigrationsAssembly(migrationsAssembly));
+                });
+
+            services.AddOrgManagement()
+                .AddOrgStore(option =>
+                {
+                    option.ContextBuilder = builder =>
+                      builder.UseMySql(Configuration.GetConnectionString("Department"), sql => sql.MigrationsAssembly(migrationsAssembly));
+                });
+
+
             services.AddScoped<VersionController>();
             services.AddScoped<VersionLogicHandler>();
+            services.AddScoped<DeptController>();
+            services.AddScoped<DeptLogicHandler>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSwaggerGen(c =>
             {

@@ -4,5 +4,110 @@
         <name>PackageTest</name>
     </assembly>
     <members>
+        <member name="P:PackageTest.Dtos.ChangeDto.SourceId">
+            <summary>
+            变动源组织架构Id
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.RecordType">
+            <summary>
+            记录类型
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.UpdateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.OperationType">
+            <summary>
+            变动方式
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.ChangedProperties">
+            <summary>
+            修改字段和修改的值(旧的内容和新的内容以','分隔)
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.ChangeDto.IsActive">
+            <summary>
+            改变记录是否有效。 撤销此次变动时将把管理的变动记录改为无效状态
+            </summary>
+        </member>
+        <member name="T:PackageTest.Dtos.DeptDto">
+            <summary>
+            部门信息传输对象（这里与领域模型几乎一样，但实际项目中需要根据具体前端需求增加字段）
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Id">
+            <summary>
+            部门Id
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Code">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.DirectorId">
+            <summary>
+            部门负责人Id
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Description">
+            <summary>
+            部门简介
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Location">
+            <summary>
+            部门地址
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.ParentId">
+            <summary>
+            上级部门Id
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.UpdateTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.EmployeeIds">
+            <summary>
+            部门员工Id列表, 以逗号分隔
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.CompanyId">
+            <summary>
+            部门所属公司
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.Status">
+            <summary>
+            部门状态（e.g. 待启用，生效，停用）
+            </summary>
+        </member>
+        <member name="P:PackageTest.Dtos.DeptDto.changeId">
+            <summary>
+            变化记录Id
+            </summary>
+        </member>
     </members>
 </doc>

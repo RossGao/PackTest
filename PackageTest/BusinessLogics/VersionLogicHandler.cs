@@ -7,18 +7,18 @@ namespace PackageTest.BusinessLogics
 {
     public class VersionLogicHandler
     {
-        private IVManager vManager;
+        private IVManager _VManager;
 
         public VersionLogicHandler(IVManager theManager)
         {
-            vManager = theManager;
+            _VManager = theManager;
         }
 
         public VersionInfo CreateNewVersion(VersionInfoDto newVersion)
         {
             if (newVersion != null)
             {
-                return vManager.CreateNewVersion(new VersionInfo
+                return _VManager.CreateNewVersion(new VersionInfo
                 {
                     Creator = newVersion.Creator,
                     VersionNumber = newVersion.VersionNumber,
@@ -36,7 +36,7 @@ namespace PackageTest.BusinessLogics
         {
             if (newDetail != null)
             {
-                return vManager.CreateNewDetail(new VersionDetail
+                return _VManager.CreateNewDetail(new VersionDetail
                 {
                     Applicant = newDetail.Applicant,
                     CommitIds = newDetail.CommitIds,
@@ -55,7 +55,7 @@ namespace PackageTest.BusinessLogics
         {
             if (id != 0)
             {
-                vManager.Submit(id, releaseNote);
+                _VManager.Submit(id, releaseNote);
             }
         }
 
@@ -63,7 +63,7 @@ namespace PackageTest.BusinessLogics
         {
             if (id != 0)
             {
-                vManager.DeleteVersion(id);
+                _VManager.DeleteVersion(id);
             }
         }
 
@@ -71,7 +71,7 @@ namespace PackageTest.BusinessLogics
         {
             if (updated != null)
             {
-                vManager.UpdateDetail(new VersionDetail
+                _VManager.UpdateDetail(new VersionDetail
                 {
                     Id = updated.Id,
                     Applicant = updated.Applicant,
@@ -89,7 +89,7 @@ namespace PackageTest.BusinessLogics
         {
             if (versionId != 0)
             {
-                return vManager.GetVersionDetails(versionId);
+                return _VManager.GetVersionDetails(versionId);
             }
 
             return null;
@@ -99,7 +99,7 @@ namespace PackageTest.BusinessLogics
         {
             if (id != 0)
             {
-                vManager.DeleteDetail(id);
+                _VManager.DeleteDetail(id);
             }
         }
     }
